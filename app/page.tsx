@@ -42,21 +42,21 @@ export default function Portfolio() {
       subtitle: "SaaS de Turnos y Pagos",
       description: "Aplicación web para gestión de turnos con integración a Mercado Pago y notificaciones automáticas.",
       link: "https://urbanbarber-web.vercel.app/",
-      image: "/images/Barber.jpg",
+      image: "/image/Barber.jpg",
     },
     {
       title: "Gestión OK",
       subtitle: "SaaS de Inventario",
       description: "Sistema de administración de stock multivariante (talles/colores) y gestión de proveedores.",
       link: "https://gestionok.vercel.app/",
-      image: "/images/Stock.jpg",
+      image: "/image/Stock.jpg",
     },
     {
       title: "Lavadero Web",
       subtitle: "SaaS Gestor de Servicios",
       description: "Sistema de reserva y flujo de trabajo automotriz con alertas personalizadas por email.",
       link: "https://lavadero-web.vercel.app/",
-      image: "/images/Lavadero.jpg",
+      image: "/image/Lavadero.jpg",
     }
   ];
 
