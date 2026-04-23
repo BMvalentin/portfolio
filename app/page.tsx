@@ -89,7 +89,7 @@ export default function Portfolio() {
     { name: "TypeScript", icon: <IconBrandTypescript size={24} /> },
     { name: "Prisma", icon: <IconBrandPrisma size={24} /> },
     { name: "MySQL", icon: <IconBrandMysql size={24} /> },
-    { name: "SQLServer", icon: <IconDatabase size={24} />},
+    { name: "SQLServer", icon: <IconDatabase size={24} /> },
     { name: "Tailwind", icon: <IconBrandTailwind size={24} /> },
     { name: "Git", icon: <IconBrandGit size={24} /> },
   ];
@@ -167,7 +167,7 @@ export default function Portfolio() {
 
         {/* CONTENIDO PRINCIPAL */}
         <main className="w-full lg:w-2/3 px-6 lg:px-12 pt-32 pb-24 space-y-32">
-          
+
           {/* SOBRE MÍ */}
           <section id="sobre-mi" className="scroll-mt-32">
             <div className="max-w-xl space-y-12">
@@ -221,12 +221,18 @@ export default function Portfolio() {
                   transition={{ delay: i * 0.1 }}
                   className="p-10 bg-panel border border-white/5 rounded-[2.5rem] flex flex-col md:flex-row items-start md:items-center gap-8 hover:border-accent/20 transition-all group"
                 >
+                  {/* CORRECCIÓN: Renderizamos el icono directamente */}
                   <div className="w-16 h-16 bg-accent/5 rounded-3xl flex-shrink-0 flex items-center justify-center text-accent group-hover:scale-110 transition-transform duration-500">
-                    {React.cloneElement(service.icon as React.ReactElement, { size: 32 })}
+                    {service.icon}
                   </div>
+
                   <div className="space-y-2">
-                    <h4 className="text-xl font-bold text-white italic uppercase tracking-tight">{service.title}</h4>
-                    <p className="text-sm leading-relaxed text-neutral-500 max-w-md">{service.description}</p>
+                    <h4 className="text-xl font-bold text-white italic uppercase tracking-tight">
+                      {service.title}
+                    </h4>
+                    <p className="text-sm leading-relaxed text-neutral-500 max-w-md">
+                      {service.description}
+                    </p>
                   </div>
                 </motion.div>
               ))}
