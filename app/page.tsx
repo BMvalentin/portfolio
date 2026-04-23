@@ -76,11 +76,6 @@ export default function Portfolio() {
       description: "Interfaces modernas y rápidas conectadas a arquitecturas de backend robustas y seguras.",
       icon: <IconCode size={24} />
     },
-    {
-      title: "Optimización IT",
-      description: "Digitalización de procesos analógicos para mejorar la eficiencia y el control de tu negocio.",
-      icon: <IconChartBar size={24} />
-    }
   ];
 
   const tools = [
