@@ -20,18 +20,19 @@ import {
   IconChartBar,
   IconSettings,
   IconBrandNodejs,
-  IconPrismPlus,
   IconBrandPrisma
 } from '@tabler/icons-react';
 
-// Componente para los Títulos Estilo Framer
+// Componente para los Títulos con Estilo Neón Violeta y espacio para tildes
 const SectionHeading = ({ main, sub }: { main: string; sub: string }) => (
   <div className="mb-12">
-    <h2 className="text-5xl md:text-7xl font-black text-white italic uppercase tracking-[-0.05em] leading-[0.9]">
+    <h2 className="text-5xl md:text-7xl font-black text-white italic uppercase tracking-[-0.05em] leading-[1.1]">
       {main}<br />
-      <span className="text-white/10">{sub}</span>
+      <span className="text-accent drop-shadow-[0_0_15px_rgba(168,85,247,0.8)]">
+        {sub}
+      </span>
     </h2>
-    <div className="h-1.5 w-20 bg-accent mt-6 rounded-full"></div>
+    <div className="h-1.5 w-20 bg-accent mt-6 rounded-full shadow-[0_0_20px_rgba(168,85,247,0.6)]"></div>
   </div>
 );
 
@@ -43,6 +44,7 @@ export default function Portfolio() {
       description: "Aplicación web para gestión de turnos con integración a Mercado Pago y notificaciones automáticas.",
       link: "https://urbanbarber-web.vercel.app/",
       image: "/image/Barber.jpg",
+      technologies: ["Next.js", "Prisma", "Mercado Pago", "MySQL"]
     },
     {
       title: "Gestión OK",
@@ -50,6 +52,7 @@ export default function Portfolio() {
       description: "Sistema de administración de stock multivariante (talles/colores) y gestión de proveedores.",
       link: "https://gestionok.vercel.app/",
       image: "/image/Stock.jpg",
+      technologies: ["TypeScript", "Next.js", "Tailwind", "Prisma"]
     },
     {
       title: "Lavadero Web",
@@ -57,6 +60,7 @@ export default function Portfolio() {
       description: "Sistema de reserva y flujo de trabajo automotriz con alertas personalizadas por email.",
       link: "https://lavadero-web.vercel.app/",
       image: "/image/Lavadero.jpg",
+      technologies: ["React", "Node.js", "PostgreSQL", "Nodemailer"]
     }
   ];
 
@@ -98,7 +102,6 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background text-neutral-400 font-sans selection:bg-accent/20 relative">
 
-      {/* NAVEGACIÓN - Absolute (No baja con el scroll) */}
       <nav className="absolute top-8 w-full z-50 flex justify-center px-4">
         <motion.div
           initial={{ y: -20, opacity: 0 }}
@@ -114,7 +117,7 @@ export default function Portfolio() {
 
       <div className="flex flex-col lg:flex-row max-w-7xl mx-auto min-h-screen">
 
-        {/* SIDEBAR - Largo y alineado al contenido */}
+        {/* SIDEBAR */}
         <aside className="w-full lg:w-1/3 p-4 lg:p-6 pt-32 lg:pt-32">
           <div className="bg-panel border border-white/5 rounded-[3rem] p-8 md:p-12 flex flex-col justify-between shadow-2xl relative overflow-hidden min-h-[calc(100vh-10rem)] h-fit lg:sticky lg:top-32 py-16">
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none"></div>
@@ -132,11 +135,13 @@ export default function Portfolio() {
               </div>
 
               <div className="space-y-8 text-center">
-                <h1 className="text-5xl md:text-6xl font-black text-white italic tracking-tight uppercase leading-[0.95]">
+                <h1 className="text-5xl md:text-6xl font-black text-white italic tracking-tight uppercase leading-[1.1]">
                   Valentín<br />
-                  <span className="block mt-2 text-white/20">Méndez</span>
+                  <span className="block mt-2 text-accent drop-shadow-[0_0_20px_rgba(168,85,247,0.7)]">
+                    Méndez
+                  </span>
                 </h1>
-                <div className="h-1 w-12 bg-accent mx-auto rounded-full"></div>
+                <div className="h-1 w-12 bg-accent mx-auto rounded-full shadow-[0_0_15px_rgba(168,85,247,0.8)]"></div>
               </div>
             </div>
 
@@ -154,7 +159,8 @@ export default function Portfolio() {
               </div>
               <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-800 to-transparent"></div>
               <div className="text-center text-[10px] font-bold uppercase tracking-[0.4em] text-neutral-600 italic">
-                Analista de Sistemas & Full Stack
+                Analista de Sistemas -  
+                Full Stack Developer
               </div>
             </div>
           </div>
@@ -167,8 +173,8 @@ export default function Portfolio() {
           <section id="sobre-mi" className="scroll-mt-32">
             <div className="max-w-xl space-y-12">
               <SectionHeading main="SOBRE" sub="MÍ" />
-              <p className="text-2xl md:text-4xl font-medium text-white leading-tight tracking-tight italic">
-                Me enfoco en el diseño de <span className="text-accent">soluciones escalables</span> y la arquitectura de software, optimizando procesos mediante herramientas digitales eficientes.
+              <p className="text-2xl md:text-4xl font-medium text-white leading-[1.3] tracking-tight italic">
+                Me enfoco en el diseño de <span className="text-accent drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]">soluciones escalables</span> y la arquitectura de software, optimizando procesos mediante herramientas digitales eficientes.
               </p>
               <div className="grid grid-cols-3 gap-8 pt-8 border-t border-neutral-900">
                 {stats.map((stat, i) => (
@@ -190,13 +196,20 @@ export default function Portfolio() {
                   <div className="relative h-28 w-28 flex-shrink-0 overflow-hidden rounded-2xl border border-neutral-800">
                     <Image src={project.image} alt={project.title} fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
                   </div>
-                  <div className="flex-1 text-center sm:text-left">
+                  <div className="flex-1 text-center sm:text-left w-full">
                     <div className="flex justify-between items-center mb-1">
                       <h4 className="text-xl font-bold text-neutral-200 group-hover:text-white">{project.title}</h4>
                       <IconExternalLink size={16} className="text-neutral-700 group-hover:text-accent" />
                     </div>
                     <p className="text-accent/70 font-mono text-[10px] font-bold uppercase tracking-widest mb-2">{project.subtitle}</p>
-                    <p className="text-sm text-neutral-500 line-clamp-2">{project.description}</p>
+                    <p className="text-sm text-neutral-500 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, i) => (
+                        <span key={i} className="text-[9px] px-2 py-0.5 bg-white/5 border border-white/10 rounded-full text-neutral-400 uppercase font-bold tracking-tighter">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </motion.a>
               ))}
@@ -210,17 +223,11 @@ export default function Portfolio() {
               {services.map((service, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
                   className="p-10 bg-panel border border-white/5 rounded-[2.5rem] flex flex-col md:flex-row items-start md:items-center gap-8 hover:border-accent/20 transition-all group"
                 >
-                  {/* CORRECCIÓN: Renderizamos el icono directamente */}
-                  <div className="w-16 h-16 bg-accent/5 rounded-3xl flex-shrink-0 flex items-center justify-center text-accent group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-16 h-16 bg-accent/10 rounded-3xl flex-shrink-0 flex items-center justify-center text-accent group-hover:scale-110 transition-transform duration-500 shadow-[0_0_20px_rgba(168,85,247,0.2)] group-hover:shadow-[0_0_35px_rgba(168,85,247,0.4)]">
                     {service.icon}
                   </div>
-
                   <div className="space-y-2">
                     <h4 className="text-xl font-bold text-white italic uppercase tracking-tight">
                       {service.title}
@@ -241,7 +248,7 @@ export default function Portfolio() {
               {tools.map((tool) => (
                 <div key={tool.name} className="group relative flex items-center justify-center w-16 h-16 bg-panel border border-white/5 rounded-full hover:border-accent/40 hover:bg-accent/5 transition-all duration-500" title={tool.name}>
                   <div className="absolute inset-1 rounded-full border border-white/[0.02] group-hover:border-accent/10"></div>
-                  <div className="text-neutral-500 group-hover:text-accent group-hover:scale-110 transition-all duration-500">{tool.icon}</div>
+                  <div className="text-neutral-500 group-hover:text-accent group-hover:scale-110 transition-all duration-500 drop-shadow-[0_0_12px_rgba(168,85,247,0.6)]">{tool.icon}</div>
                 </div>
               ))}
             </div>
