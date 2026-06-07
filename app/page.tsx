@@ -176,14 +176,6 @@ export default function Portfolio() {
               <p className="text-2xl md:text-4xl font-medium text-white leading-[1.3] tracking-tight italic">
                 Me enfoco en el diseño de <span className="text-accent drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]">soluciones escalables</span> y la arquitectura de software, optimizando procesos mediante herramientas digitales eficientes.
               </p>
-              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-neutral-900">
-                {stats.map((stat, i) => (
-                  <div key={i} className="flex flex-col gap-1">
-                    <span className="text-4xl md:text-6xl font-black text-white italic tracking-tighter leading-none">{stat.value}</span>
-                    <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-neutral-500 leading-tight">{stat.label}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </section>
 
