@@ -11,8 +11,6 @@ import {
   IconBrandTypescript,
   IconDatabase,
   IconBrandTailwind,
-  IconBrandFramer,
-  IconCreditCard,
   IconBrandGit,
   IconBrandMysql,
   IconRocket,
@@ -20,7 +18,8 @@ import {
   IconChartBar,
   IconSettings,
   IconBrandNodejs,
-  IconBrandPrisma
+  IconBrandPrisma,
+  IconBrandPython
 } from '@tabler/icons-react';
 
 // Componente para los Títulos con Estilo Neón Violeta y espacio para tildes
@@ -66,37 +65,33 @@ export default function Portfolio() {
 
   const services = [
     {
-      title: "Desarrollo SaaS",
-      description: "Creación de plataformas escalables con modelos de suscripción y gestión de datos complejos.",
+      title: "Desarrollo de Software",
+      description: "Construcción de aplicaciones web interactivas y escalables. Creación de plataformas lógicas con código limpio, priorizando la experiencia de usuario y el rendimiento.",
       icon: <IconRocket size={24} />
     },
     {
-      title: "Software a Medida",
-      description: "Soluciones exclusivas diseñadas desde cero para cubrir las necesidades específicas de tu flujo de trabajo.",
+      title: "Arquitectura & Backend",
+      description: "Diseño y optimización de bases de datos relacionales y estructuras de servidores robustas, asegurando la integridad, velocidad y seguridad de tus datos.",
       icon: <IconSettings size={24} />
     },
     {
-      title: "Full Stack Web",
-      description: "Interfaces modernas y rápidas conectadas a arquitecturas de backend robustas y seguras.",
-      icon: <IconCode size={24} />
-    },
+      title: "Análisis de Datos & BI",
+      description: "Transformación de datos crudos en valor real. Modelado de datos, pipelines ETL y creación de dashboards dinámicos para simplificar la toma de decisiones estratégicas.",
+      icon: <IconChartBar size={24} />
+    }
   ];
 
   const tools = [
     { name: "Next.js", icon: <IconBrandNextjs size={24} /> },
     { name: "Node.js", icon: <IconBrandNodejs size={24} /> },
     { name: "TypeScript", icon: <IconBrandTypescript size={24} /> },
-    { name: "Prisma", icon: <IconBrandPrisma size={24} /> },
-    { name: "MySQL", icon: <IconBrandMysql size={24} /> },
+    { name: "Python", icon: <IconBrandPython size={24} /> },
     { name: "SQLServer", icon: <IconDatabase size={24} /> },
+    { name: "MySQL", icon: <IconBrandMysql size={24} /> },
+    { name: "Prisma", icon: <IconBrandPrisma size={24} /> },
+    { name: "Power BI", icon: <IconChartBar size={24} /> },
     { name: "Tailwind", icon: <IconBrandTailwind size={24} /> },
     { name: "Git", icon: <IconBrandGit size={24} /> },
-  ];
-
-  const stats = [
-    { label: "Años de Experiencia", value: "+3" },
-    { label: "Proyectos Completados", value: "+4" },
-    { label: "Clientes Felices", value: "+6" },
   ];
 
   return (
@@ -158,9 +153,9 @@ export default function Portfolio() {
                 ))}
               </div>
               <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-800 to-transparent"></div>
-              <div className="text-center text-[10px] font-bold uppercase tracking-[0.4em] text-neutral-600 italic">
-                Analista de Sistemas -  
-                Full Stack Developer
+              <div className="text-center text-[10px] font-bold uppercase tracking-[0.4em] text-neutral-600 italic leading-loose">
+                Analista de Sistemas <br />
+                Full Stack Dev & Data Analyst
               </div>
             </div>
           </div>
@@ -174,7 +169,7 @@ export default function Portfolio() {
             <div className="max-w-xl space-y-12">
               <SectionHeading main="SOBRE" sub="MÍ" />
               <p className="text-2xl md:text-4xl font-medium text-white leading-[1.3] tracking-tight italic">
-                Me enfoco en el diseño de <span className="text-accent drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]">soluciones escalables</span> y la arquitectura de software, optimizando procesos mediante herramientas digitales eficientes.
+                Me enfoco en el diseño, desarrollo de <span className="text-accent drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]">soluciones escalables</span> y el análisis de datos, optimizando procesos del negocio mediante código limpio e insights estratégicos.
               </p>
             </div>
           </section>
