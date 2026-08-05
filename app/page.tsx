@@ -41,14 +41,14 @@ export default function Portfolio() {
       title: "Urban Barber",
       subtitle: "SaaS de Turnos y Pagos",
       description: "Aplicación web para gestión de turnos con integración a Mercado Pago y notificaciones automáticas.",
-      link: "https://urbanbarber-web.vercel.app/",
+      link: "https://mayoraz.vercel.app/",
       image: "/image/Barber.jpg",
       technologies: ["Next.js", "Prisma", "Mercado Pago", "MySQL"]
     },
     {
       title: "Gestión OK",
       subtitle: "SaaS de Inventario",
-      description: "Sistema de administración de stock multivariante (talles/colores) y gestión de proveedores.",
+      description: "Plataforma integral SaaS diseñada para optimizar la gestión comercial de negocios. Permite administrar stock multivariante (talles y colores), controlar proveedores y registrar un historial detallado de entradas y salidas en tiempo real. Incluye un catálogo online con integración directa a WhatsApp para agilizar y concretar ventas de forma fluida.",
       link: "https://gestionok.vercel.app/",
       image: "/image/Stock.jpg",
       technologies: ["TypeScript", "Next.js", "Tailwind", "Prisma"]
@@ -181,7 +181,7 @@ export default function Portfolio() {
               {projects.map((project, index) => (
                 <motion.a key={index} href={project.link} target="_blank" className="group flex flex-col sm:flex-row items-center bg-panel border border-white/5 hover:border-accent/20 transition-all p-5 gap-6 rounded-[2rem]">
                   <div className="relative h-28 w-28 flex-shrink-0 overflow-hidden rounded-2xl border border-neutral-800">
-                    <Image src={project.image} alt={project.title} fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+                    <Image src={project.image} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" />
                   </div>
                   <div className="flex-1 text-center sm:text-left w-full">
                     <div className="flex justify-between items-center mb-1">
