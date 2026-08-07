@@ -60,6 +60,14 @@ export default function Portfolio() {
       link: "https://lavadero-web.vercel.app/",
       image: "/image/Lavadero.jpg",
       technologies: ["React", "Node.js", "PostgreSQL", "Nodemailer"]
+    },
+     {
+      title: "Gourmet",
+      subtitle: "SaaS Gestor de Pedidos",
+      description: "Sistema integral de gestion de pedidos para restaurantes, con panel de administración y notificaciones automáticas. Cuenta con pasarela de pagos, impresion de comandas, control de stock y multi roles.",
+      link: "https://foodie-burgers.vercel.app/",
+      image: "/image/gourmet.jpg",
+      technologies: ["React", "Node.js", "PostgreSQL", "Nodemailer"]
     }
   ];
 
