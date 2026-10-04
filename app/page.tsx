@@ -153,7 +153,7 @@ export default function Portfolio() {
                 {[
                   { icon: <IconBrandGithub size={22} />, href: "https://github.com/BMvalentin" },
                   { icon: <IconBrandLinkedin size={22} />, href: "https://www.linkedin.com/in/valentinmendez/" },
-                  { icon: <IconMail size={22} />, href: "mailto:valentinmendez0042@gmail.com" }
+                  { icon: <IconMail size={22} />, href: "mailto:valentinmendez.dev@gmail.com" }
                 ].map((social, i) => (
                   <a key={i} href={social.href} target="_blank" className="p-4 bg-white/[0.03] rounded-2xl border border-white/5 hover:border-accent/40 hover:bg-accent/5 hover:text-white transition-all duration-500">
                     {social.icon}
