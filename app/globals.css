@@ -2,9 +2,12 @@
 
 @theme {
   --color-background: #050505;
-  --color-panel: #0c0c0c; 
+  --color-panel: #0c0c0c;
   --color-accent: #b794f4; /* Lila Pastel / Lavanda */
   --color-accent-dark: #9f7aea;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
 @layer base {
@@ -12,9 +15,47 @@
     background-color: var(--color-background);
     color: #a3a3a3;
     @apply antialiased;
+    overflow-x: clip;
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .animate-nav-in {
+    animation: nav-in 0.5s ease-out both;
+  }
+}
+
+@keyframes nav-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

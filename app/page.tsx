@@ -1,7 +1,4 @@
-"use client";
-import React from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import {
   IconBrandGithub,
   IconBrandLinkedin,
@@ -14,7 +11,6 @@ import {
   IconBrandGit,
   IconBrandMysql,
   IconRocket,
-  IconCode,
   IconChartBar,
   IconSettings,
   IconBrandNodejs,
@@ -24,16 +20,22 @@ import {
 
 // Componente para los Títulos con Estilo Neón Violeta y espacio para tildes
 const SectionHeading = ({ main, sub }: { main: string; sub: string }) => (
-  <div className="mb-12">
-    <h2 className="text-5xl md:text-7xl font-black text-white italic uppercase tracking-[-0.05em] leading-[1.1]">
+  <div className="mb-8 md:mb-12">
+    <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-white italic uppercase tracking-[-0.05em] leading-[1.1]">
       {main}<br />
       <span className="text-accent drop-shadow-[0_0_15px_rgba(168,85,247,0.8)]">
         {sub}
       </span>
     </h2>
-    <div className="h-1.5 w-20 bg-accent mt-6 rounded-full shadow-[0_0_20px_rgba(168,85,247,0.6)]"></div>
+    <div className="h-1.5 w-20 bg-accent mt-4 md:mt-6 rounded-full shadow-[0_0_20px_rgba(168,85,247,0.6)]"></div>
   </div>
 );
+
+const socials = [
+  { label: "GitHub", href: "https://github.com/BMvalentin", icon: IconBrandGithub, external: true },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/valentinmendez/", icon: IconBrandLinkedin, external: true },
+  { label: "Email", href: "mailto:valentinmendez.dev@gmail.com", icon: IconMail, external: false },
+];
 
 export default function Portfolio() {
   const projects = [
@@ -75,17 +77,17 @@ export default function Portfolio() {
     {
       title: "Desarrollo de Software",
       description: "Construcción de aplicaciones web interactivas y escalables. Creación de plataformas lógicas con código limpio, priorizando la experiencia de usuario y el rendimiento.",
-      icon: <IconRocket size={24} />
+      icon: <IconRocket size={24} aria-hidden="true" />
     },
     {
       title: "Arquitectura & Backend",
       description: "Diseño y optimización de bases de datos relacionales y estructuras de servidores robustas, asegurando la integridad, velocidad y seguridad de tus datos.",
-      icon: <IconSettings size={24} />
+      icon: <IconSettings size={24} aria-hidden="true" />
     },
     {
       title: "Análisis de Datos & BI",
       description: "Transformación de datos crudos en valor real. Modelado de datos, pipelines ETL y creación de dashboards dinámicos para simplificar la toma de decisiones estratégicas.",
-      icon: <IconChartBar size={24} />
+      icon: <IconChartBar size={24} aria-hidden="true" />
     }
   ];
 
@@ -105,40 +107,39 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background text-neutral-400 font-sans selection:bg-accent/20 relative">
 
-      <nav className="absolute top-8 w-full z-50 flex justify-center px-4">
-        <motion.div
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          className="bg-panel/80 backdrop-blur-xl border border-white/5 px-6 py-2.5 rounded-full flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em]"
-        >
-          <a href="#sobre-mi" className="hover:text-accent transition-colors">Sobre mí</a>
-          <a href="#proyectos" className="hover:text-accent transition-colors">Proyectos</a>
-          <a href="#servicios" className="hover:text-accent transition-colors">Servicios</a>
-          <a href="#herramientas" className="hover:text-accent transition-colors">Stack</a>
-        </motion.div>
+      <nav aria-label="Navegación principal" className="absolute top-6 sm:top-8 w-full z-50 flex justify-center px-2 sm:px-4">
+        <div className="animate-nav-in bg-panel/80 backdrop-blur-xl border border-white/5 px-3 sm:px-6 py-2.5 rounded-full flex gap-2.5 sm:gap-8 text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.1em] sm:tracking-[0.2em] whitespace-nowrap">
+          <a href="#sobre-mi" className="hover:text-accent focus-visible:text-accent transition-colors">Sobre mí</a>
+          <a href="#proyectos" className="hover:text-accent focus-visible:text-accent transition-colors">Proyectos</a>
+          <a href="#servicios" className="hover:text-accent focus-visible:text-accent transition-colors">Servicios</a>
+          <a href="#herramientas" className="hover:text-accent focus-visible:text-accent transition-colors">Stack</a>
+        </div>
       </nav>
 
       <div className="flex flex-col lg:flex-row max-w-7xl mx-auto min-h-screen">
 
         {/* SIDEBAR */}
-        <aside className="w-full lg:w-1/3 p-4 lg:p-6 pt-32 lg:pt-32">
-          <div className="bg-panel border border-white/5 rounded-[3rem] p-8 md:p-12 flex flex-col justify-between shadow-2xl relative overflow-hidden min-h-[calc(100vh-10rem)] h-fit lg:sticky lg:top-32 py-16">
+        <aside className="w-full lg:w-1/3 p-4 lg:p-6 pt-24 lg:pt-20">
+          <div className="bg-panel border border-white/5 rounded-[2.5rem] sm:rounded-[3rem] p-6 sm:p-8 md:p-12 flex flex-col justify-between shadow-2xl relative overflow-hidden lg:h-[calc(100vh-10rem)] h-fit lg:sticky lg:top-20">
             <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none"></div>
 
-            <div className="relative z-10 space-y-12">
-              <div className="relative w-36 h-36 md:w-44 md:h-44 justify-self-center mx-auto">
+            <div className="relative z-10 space-y-10 sm:space-y-12">
+              <div className="relative w-32 h-32 sm:w-36 sm:h-36 md:w-44 md:h-44 mx-auto">
                 <div className="absolute -inset-6 bg-accent/10 rounded-full blur-3xl"></div>
                 <div className="relative w-full h-full rounded-full overflow-hidden border border-neutral-800 shadow-2xl">
-                  <img
-                    src="image/perfil.jpg"
+                  <Image
+                    src="/image/perfil.jpg"
                     alt="Valentín Méndez"
-                    className="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 transition-all duration-1000"
+                    fill
+                    sizes="(max-width: 768px) 144px, 176px"
+                    preload
+                    className="object-cover grayscale brightness-90 hover:grayscale-0 transition-all duration-700"
                   />
                 </div>
               </div>
 
-              <div className="space-y-8 text-center">
-                <h1 className="text-5xl md:text-6xl font-black text-white italic tracking-tight uppercase leading-[1.1]">
+              <div className="space-y-6 sm:space-y-8 text-center">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white italic tracking-tight uppercase leading-[1.1]">
                   Valentín<br />
                   <span className="block mt-2 text-accent drop-shadow-[0_0_20px_rgba(168,85,247,0.7)]">
                     Méndez
@@ -148,20 +149,25 @@ export default function Portfolio() {
               </div>
             </div>
 
-            <div className="relative z-10 mt-16 space-y-6">
-              <div className="flex gap-4 justify-center">
-                {[
-                  { icon: <IconBrandGithub size={22} />, href: "https://github.com/BMvalentin" },
-                  { icon: <IconBrandLinkedin size={22} />, href: "https://www.linkedin.com/in/valentinmendez/" },
-                  { icon: <IconMail size={22} />, href: "mailto:valentinmendez.dev@gmail.com" }
-                ].map((social, i) => (
-                  <a key={i} href={social.href} target="_blank" className="p-4 bg-white/[0.03] rounded-2xl border border-white/5 hover:border-accent/40 hover:bg-accent/5 hover:text-white transition-all duration-500">
-                    {social.icon}
-                  </a>
-                ))}
+            <div className="relative z-10 mt-12 sm:mt-16 space-y-6">
+              <div className="flex gap-3 sm:gap-4 justify-center">
+                {socials.map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      aria-label={social.label}
+                      {...(social.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      className="p-3.5 sm:p-4 text-neutral-400 bg-white/[0.03] rounded-2xl border border-white/5 hover:border-accent/40 hover:bg-accent/5 hover:text-white transition-colors duration-300"
+                    >
+                      <Icon size={22} aria-hidden="true" />
+                    </a>
+                  );
+                })}
               </div>
               <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-800 to-transparent"></div>
-              <div className="text-center text-[10px] font-bold uppercase tracking-[0.4em] text-neutral-600 italic leading-loose">
+              <div className="text-center text-[10px] font-bold uppercase tracking-[0.3em] sm:tracking-[0.4em] text-neutral-500 italic leading-loose">
                 Analista de Sistemas <br />
                 Full Stack Dev & Data Analyst
               </div>
@@ -170,13 +176,13 @@ export default function Portfolio() {
         </aside>
 
         {/* CONTENIDO PRINCIPAL */}
-        <main className="w-full lg:w-2/3 px-6 lg:px-12 pt-32 pb-24 space-y-32">
+        <main className="w-full lg:w-2/3 px-6 lg:px-12 pt-10 lg:pt-32 pb-24 space-y-20 md:space-y-32">
 
           {/* SOBRE MÍ */}
           <section id="sobre-mi" className="scroll-mt-32">
-            <div className="max-w-xl space-y-12">
+            <div className="max-w-2xl space-y-10 sm:space-y-12">
               <SectionHeading main="SOBRE" sub="MÍ" />
-              <p className="text-2xl md:text-4xl font-medium text-white leading-[1.3] tracking-tight italic">
+              <p className="text-xl sm:text-2xl md:text-4xl font-medium text-white leading-[1.3] tracking-tight italic">
                 Me enfoco en el diseño, desarrollo de <span className="text-accent drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]">soluciones escalables</span> y el análisis de datos, optimizando procesos del negocio mediante código limpio e insights estratégicos.
               </p>
             </div>
@@ -187,26 +193,38 @@ export default function Portfolio() {
             <SectionHeading main="MIS" sub="PROYECTOS" />
             <div className="space-y-4 max-w-2xl">
               {projects.map((project, index) => (
-                <motion.a key={index} href={project.link} target="_blank" className="group flex flex-col sm:flex-row items-center bg-panel border border-white/5 hover:border-accent/20 transition-all p-5 gap-6 rounded-[2rem]">
-                  <div className="relative h-28 w-28 flex-shrink-0 overflow-hidden rounded-2xl border border-neutral-800">
-                    <Image src={project.image} alt={project.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" />
+                <a
+                  key={index}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col sm:flex-row items-center bg-panel border border-white/5 hover:border-accent/20 focus-visible:border-accent/40 transition-colors p-4 sm:p-5 gap-5 sm:gap-6 rounded-[1.75rem] sm:rounded-[2rem]"
+                >
+                  <div className="relative h-24 w-24 sm:h-28 sm:w-28 flex-shrink-0 overflow-hidden rounded-2xl border border-neutral-800">
+                    <Image
+                      src={project.image}
+                      alt={`Vista previa de ${project.title}`}
+                      fill
+                      sizes="112px"
+                      className="object-cover"
+                    />
                   </div>
                   <div className="flex-1 text-center sm:text-left w-full">
-                    <div className="flex justify-between items-center mb-1">
-                      <h4 className="text-xl font-bold text-neutral-200 group-hover:text-white">{project.title}</h4>
-                      <IconExternalLink size={16} className="text-neutral-700 group-hover:text-accent" />
+                    <div className="flex justify-between items-center gap-3 mb-1">
+                      <h3 className="text-lg sm:text-xl font-bold text-neutral-200 group-hover:text-white transition-colors">{project.title}</h3>
+                      <IconExternalLink size={16} aria-hidden="true" className="shrink-0 text-neutral-700 group-hover:text-accent transition-colors" />
                     </div>
-                    <p className="text-accent/70 font-mono text-[10px] font-bold uppercase tracking-widest mb-2">{project.subtitle}</p>
-                    <p className="text-sm text-neutral-500 mb-4">{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
+                    <p className="text-accent/80 font-mono text-[10px] font-bold uppercase tracking-widest mb-2">{project.subtitle}</p>
+                    <p className="text-sm text-neutral-400 leading-relaxed mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
                       {project.technologies.map((tech, i) => (
-                        <span key={i} className="text-[9px] px-2 py-0.5 bg-white/5 border border-white/10 rounded-full text-neutral-400 uppercase font-bold tracking-tighter">
+                        <span key={i} className="text-[10px] px-2 py-0.5 bg-white/5 border border-white/10 rounded-full text-neutral-300 uppercase font-bold tracking-tight">
                           {tech}
                         </span>
                       ))}
                     </div>
                   </div>
-                </motion.a>
+                </a>
               ))}
             </div>
           </section>
@@ -214,36 +232,42 @@ export default function Portfolio() {
           {/* SERVICIOS */}
           <section id="servicios" className="scroll-mt-32">
             <SectionHeading main="MIS" sub="SERVICIOS" />
-            <div className="flex flex-col gap-6 max-w-2xl">
+            <div className="flex flex-col gap-5 sm:gap-6 max-w-2xl">
               {services.map((service, i) => (
-                <motion.div
+                <div
                   key={i}
-                  className="p-10 bg-panel border border-white/5 rounded-[2.5rem] flex flex-col md:flex-row items-start md:items-center gap-8 hover:border-accent/20 transition-all group"
+                  className="p-6 sm:p-8 md:p-10 bg-panel border border-white/5 rounded-[2rem] sm:rounded-[2.5rem] flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 hover:border-accent/20 transition-colors group"
                 >
-                  <div className="w-16 h-16 bg-accent/10 rounded-3xl flex-shrink-0 flex items-center justify-center text-accent group-hover:scale-110 transition-transform duration-500 shadow-[0_0_20px_rgba(168,85,247,0.2)] group-hover:shadow-[0_0_35px_rgba(168,85,247,0.4)]">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-accent/10 rounded-3xl flex-shrink-0 flex items-center justify-center text-accent group-hover:scale-105 transition-transform duration-300 shadow-[0_0_20px_rgba(168,85,247,0.2)] group-hover:shadow-[0_0_35px_rgba(168,85,247,0.4)]">
                     {service.icon}
                   </div>
                   <div className="space-y-2">
-                    <h4 className="text-xl font-bold text-white italic uppercase tracking-tight">
+                    <h3 className="text-lg sm:text-xl font-bold text-white italic uppercase tracking-tight">
                       {service.title}
-                    </h4>
-                    <p className="text-sm leading-relaxed text-neutral-500 max-w-md">
+                    </h3>
+                    <p className="text-sm leading-relaxed text-neutral-400 max-w-md">
                       {service.description}
                     </p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </section>
 
           {/* HERRAMIENTAS / STACK */}
-          <section id="herramientas" className="scroll-mt-32 pb-12">
+          <section id="herramientas" className="scroll-mt-32">
             <SectionHeading main="STACK" sub="TÉCNICO" />
-            <div className="flex flex-wrap gap-4 max-w-2xl">
+            <div className="flex flex-wrap gap-3 sm:gap-4 max-w-2xl">
               {tools.map((tool) => (
-                <div key={tool.name} className="group relative flex items-center justify-center w-16 h-16 bg-panel border border-white/5 rounded-full hover:border-accent/40 hover:bg-accent/5 transition-all duration-500" title={tool.name}>
-                  <div className="absolute inset-1 rounded-full border border-white/[0.02] group-hover:border-accent/10"></div>
-                  <div className="text-neutral-500 group-hover:text-accent group-hover:scale-110 transition-all duration-500 drop-shadow-[0_0_12px_rgba(168,85,247,0.6)]">{tool.icon}</div>
+                <div
+                  key={tool.name}
+                  role="img"
+                  aria-label={tool.name}
+                  title={tool.name}
+                  className="group relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-panel border border-white/5 rounded-full hover:border-accent/40 transition-colors duration-300"
+                >
+                  <div className="absolute inset-1 rounded-full border border-white/[0.02] group-hover:border-accent/10 transition-colors"></div>
+                  <div className="text-neutral-400 group-hover:text-accent transition-colors duration-300 group-hover:drop-shadow-[0_0_12px_rgba(168,85,247,0.5)]">{tool.icon}</div>
                 </div>
               ))}
             </div>
@@ -251,6 +275,7 @@ export default function Portfolio() {
 
         </main>
       </div>
+
     </div>
   );
 }
