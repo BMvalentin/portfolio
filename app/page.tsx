@@ -276,6 +276,14 @@ export default function Portfolio() {
         </main>
       </div>
 
+      {/* FOOTER */}
+      <footer className="border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-500">
+          <p>© {new Date().getFullYear()} Valentín Méndez. Todos los derechos reservados.</p>
+          <p className="text-neutral-600">Diseñado y desarrollado por Valentín Méndez</p>
+        </div>
+      </footer>
+
     </div>
   );
 }
