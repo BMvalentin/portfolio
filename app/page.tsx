@@ -49,24 +49,24 @@ export default function Portfolio() {
     },
     {
       title: "Gestión OK",
-      subtitle: "SaaS de Inventario",
-      description: "Plataforma integral SaaS diseñada para optimizar la gestión comercial de negocios. Permite administrar stock multivariante (talles y colores), controlar proveedores y registrar un historial detallado de entradas y salidas en tiempo real. Incluye un catálogo online con integración directa a WhatsApp para agilizar y concretar ventas de forma fluida.",
+      subtitle: "Tienda Online y Gestión Comercial",
+      description: "Plataforma integral diseñada para optimizar la gestión comercial de negocios. Permite administrar stock multivariante (talles y colores), controlar proveedores y registrar un historial detallado de entradas y salidas en tiempo real. Incluye un catálogo online con integración directa a WhatsApp para agilizar y concretar ventas de forma fluida.",
       link: "https://newsurfboard.logabyte.com.ar/",
       image: "/image/Stock.jpg",
       technologies: ["TypeScript", "Next.js", "Tailwind", "Prisma"]
     },
     {
       title: "Lavadero Web",
-      subtitle: "SaaS Gestor de Servicios",
+      subtitle: "Sistema de Gestión de Servicios",
       description: "Sistema de reserva y flujo de trabajo automotriz con alertas personalizadas por email.",
       link: "https://lavadero-web.vercel.app/",
       image: "/image/Lavadero.jpg",
-      technologies: ["React", "Node.js", "PostgreSQL", "Nodemailer"]
+      technologies: ["React", "Node.js","Next.js", "PostgreSQL", "Nodemailer"]
     },
      {
       title: "Gourmet",
-      subtitle: "SaaS Gestor de Pedidos",
-      description: "Sistema integral de gestion de pedidos para restaurantes, con panel de administración y notificaciones automáticas. Cuenta con pasarela de pagos, impresion de comandas, control de stock y multi roles.",
+      subtitle: "Gestor de Pedidos",
+      description: "Sistema integral de gestion de pedidos para restaurantes, con panel de administración y notificaciones automáticas. Cuenta con pasarela de pagos, impresion de comandas, control de stock y multi roles. En progreso.",
       link: "https://foodie.logabyte.com.ar/",
       image: "/image/gourmet.jpg",
       technologies: ["React", "Node.js", "PostgreSQL", "Nodemailer"]
